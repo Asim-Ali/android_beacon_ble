@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#0E0D1C</color>
+    <color name="purple_700">#1A1935</color>
+    <color name="teal_200">#0E0D1C</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!--FOR TITLE BAR-->
+    <color name="colorPrimary">#1A1935</color>
+    <color name="dividerColor">#414159</color>
+    <!--FOR BATTERY LINE-->
+    <!--    <color name="colorPrimaryDark">#0D0C1B</color>-->
+    <color name="colorPrimaryDark">#0E0D1C</color>
+    <color name="colorAccent">#FFFFFF</color>
+
+    <color name="transparent">#80000000 </color>
+    <color name="colorHeader" >#26293B</color>
+    <color name="lightGray">#aaaaaa</color>
+    <color name="colorBorder">#313452</color>
+    <color name="colorRed">#B5420F</color>
+    <color name="colorGreen">#45712D</color>
+    <color name="colorYellow">#EBB21B</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorDarkGray">#444</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorDarkHeader">#1F2230</color>
+    <color name="colorTransparent">#0D000000</color>
+    <color name="colorOrange">#FF9800</color>
+    <color name="colorLightOrange">#FFC107</color>
+    <color name="colorNotificationBackground">#13151E</color>
+    <color name="colorNotificationText">#f9f9f9</color>
+    <color name="colorNotificationBorder">#313452</color>
+
+</resources>
