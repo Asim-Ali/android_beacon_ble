@@ -13,20 +13,26 @@ import com.ble.application.model.BleDevice;
 
 import java.util.ArrayList;
 
+/**
+ * @author Asim Ali Khan
+ * @version 1.0
+ */
+
 public class ListAdapterBleDevices extends ArrayAdapter<BleDevice> {
 
     Activity activity;
     int layoutResourceID;
-    ArrayList<BleDevice> devices;
+    ArrayList<BleDevice> bleDevices;
 
     public ListAdapterBleDevices(Activity activity, int resource, ArrayList<BleDevice> objects) {
         super(activity.getApplicationContext(), resource, objects);
 
         this.activity = activity;
         layoutResourceID = resource;
-        devices = objects;
+        bleDevices = objects;
     }
 
+//    Setting fetched values for model on UI
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
@@ -36,40 +42,35 @@ public class ListAdapterBleDevices extends ArrayAdapter<BleDevice> {
             convertView = inflater.inflate(layoutResourceID, parent, false);
         }
 
-        BleDevice device = devices.get(position);
-        String name = device.getName();
-        String address = device.getAddress();
-        int rssi = device.getRSSI();
+        TextView name, rssi, address, major, minor, uuid;
+        name = convertView.findViewById(R.id.tv_name);
+        rssi = convertView.findViewById(R.id.tv_rssi);
+        address = convertView.findViewById(R.id.tv_macaddr);
+        major = convertView.findViewById(R.id.tv_major);
+        minor = convertView.findViewById(R.id.tv_minor);
+        uuid = convertView.findViewById(R.id.tv_uuid);
 
-        TextView tv_name, tv_rssi, tv_address, tv_major, tv_minor, tv_uuid, tv_proximity, tv_distance;
-        tv_name = convertView.findViewById(R.id.tv_name);
-        tv_rssi = convertView.findViewById(R.id.tv_rssi);
-        tv_address = convertView.findViewById(R.id.tv_macaddr);
-        tv_major = convertView.findViewById(R.id.tv_major);
-        tv_minor = convertView.findViewById(R.id.tv_minor);
-        tv_uuid = convertView.findViewById(R.id.tv_uuid);
-//        tv_distance = convertView.findViewById(R.id.tv_distance);
-//        tv_proximity = convertView.findViewById(R.id.tv_proximity);
+        BleDevice device = bleDevices.get(position);
+        String deviceName = device.getName();
+        String deviceAddress = device.getAddress();
+        int deviceRssi = device.getRSSI();
 
-        if (name != null && name.length() > 0) {
-            tv_name.setText(device.getName());
-//            tv_distance.setText("Distance: " + device.getDistance() + "m");
-//            tv_proximity.setText("Proximity: " + device.getProximity());
+        if (deviceName != null && deviceName.length() > 0) {
+            name.setText(device.getName());
         }
         else {
-            tv_name.setText("No Name");
+            name.setText("No Name");
         }
-        tv_major.setText("Major: " + device.getMajor());
-        tv_minor.setText("Minor: " + device.getMinor());
-        tv_uuid.setText("UUID: " + device.getUuids());
-        tv_rssi.setText("RSSI: " + Integer.toString(rssi) + "dBm");
+        major.setText("Major: " + device.getMajor());
+        minor.setText("Minor: " + device.getMinor());
+        uuid.setText("UUID: " + device.getUuid());
+        rssi.setText("RSSI: " + Integer.toString(deviceRssi) + "dBm");
 
-
-        if (address != null && address.length() > 0) {
-            tv_address.setText(device.getAddress());
+        if (deviceAddress != null && deviceAddress.length() > 0) {
+            address.setText(device.getAddress());
         }
         else {
-            tv_address.setText("No Address");
+            address.setText("No Address");
         }
 
         return convertView;

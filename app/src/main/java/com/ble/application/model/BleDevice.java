@@ -1,17 +1,19 @@
 package com.ble.application.model;
 
 import android.bluetooth.BluetoothDevice;
-import android.os.ParcelUuid;
+
+/**
+ * @author Asim Ali Khan
+ * @version 1.0
+ */
 
 public class BleDevice {
 
     private BluetoothDevice bluetoothDevice;
     private int rssi;
-    private String uuids;
+    private String uuid;
     private String major;
     private String minor;
-    private float distance;
-    private String proximity;
 
     public BleDevice(BluetoothDevice bluetoothDevice) {
         this.bluetoothDevice = bluetoothDevice;
@@ -33,12 +35,12 @@ public class BleDevice {
         return rssi;
     }
 
-    public String getUuids() {
-        return uuids;
+    public String getUuid() {
+        return uuid;
     }
 
-    public void setUuids(String uuids) {
-        this.uuids = uuids;
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
     }
 
     public String getMajor() {
@@ -65,19 +67,4 @@ public class BleDevice {
         this.bluetoothDevice = bluetoothDevice;
     }
 
-    public double getDistance() {
-        return distance;
-    }
-
-    public void setDistance(float distance) {
-        this.distance = distance;
-    }
-
-    public String getProximity() {
-        return proximity;
-    }
-
-    public void setProximity(String proximity) {
-        this.proximity = proximity;
-    }
 }
