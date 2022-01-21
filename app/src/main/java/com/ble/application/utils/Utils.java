@@ -12,6 +12,13 @@ import android.widget.Toast;
 import com.ble.application.MainActivity;
 import com.ble.application.service.ServiceBleGatt;
 
+
+/**
+ * @author Asim Ali Khan
+ * @version 1.0
+ */
+
+
 public class Utils {
 
     public static boolean checkBluetooth(BluetoothAdapter bluetoothAdapter) {

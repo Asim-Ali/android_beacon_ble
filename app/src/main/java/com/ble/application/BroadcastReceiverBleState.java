@@ -7,6 +7,12 @@ import android.content.Intent;
 
 import com.ble.application.utils.Utils;
 
+/**
+ * @author Asim Ali Khan
+ * @version 1.0
+ */
+
+
 public class BroadcastReceiverBleState extends BroadcastReceiver {
 
     Context activityContext;
